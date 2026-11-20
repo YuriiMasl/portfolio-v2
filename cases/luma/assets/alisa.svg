@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Иллюстрация стилиста Алисы">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f3e6df"/><stop offset="1" stop-color="#e2c9c0"/></linearGradient><linearGradient id="top" x2="0" y2="1"><stop stop-color="#bd8880"/><stop offset="1" stop-color="#98675f"/></linearGradient></defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg)"/><circle cx="80" cy="76" r="58" fill="#fff8f0" opacity=".42"/>
+  <path d="M29 160c4-30 22-47 51-47s47 17 51 47" fill="url(#top)"/><path d="M48 68c-1-30 12-47 33-47 23 0 36 18 32 50l-4 31c-3 20-15 33-31 33-17 0-29-14-31-35z" fill="#9c5e45"/>
+  <ellipse cx="80" cy="76" rx="27" ry="34" fill="#efc4a4"/><path d="M52 66c1-27 14-42 33-42 19 0 30 14 31 36-12-5-22-14-29-27-7 14-19 24-35 29z" fill="#985b43"/><path d="M52 79c-6 18 2 39 21 48-18 5-34-10-34-31 0-10 4-19 13-25zM108 75c8 13 7 31-1 42-5 7-11 10-19 9 16-11 15-32 14-51z" fill="#a2644b"/>
+  <path d="M68 78h7M87 78h7" stroke="#553f36" stroke-width="2.4" stroke-linecap="round"/><path d="M74 95c4 3 9 3 13 0" fill="none" stroke="#b76f68" stroke-width="2" stroke-linecap="round"/><path d="M64 71c4-3 8-3 12-1M85 70c4-2 9-1 12 2" fill="none" stroke="#8b5442" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M65 111c5 7 10 10 15 10s11-3 16-10l11 10-6 39H59l-6-39z" fill="#f4eee7"/><path d="M72 123l8 10 8-10" fill="none" stroke="#ce9a90" stroke-width="2"/>
+</svg>

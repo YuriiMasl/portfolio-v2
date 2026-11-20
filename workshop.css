@@ -109,11 +109,11 @@
   --bone: #f2ece3;
   --bone-dim: #cabfb2;
   --muted: #a9a094;
-  --ember: #f4571f;
-  --amber: #ffa94d;
-  --heat: #ffd9a0;
+  --glass-edge: #dedbd5;
+  --glass-light: #f2ece3;
+  --glass-highlight: #fffdf8;
   --line: rgba(242, 236, 227, 0.13);
-  --line-warm: rgba(255, 169, 77, 0.28);
+  --line-glass: rgba(242, 236, 227, 0.28);
   --gutter: clamp(20px, 4.6vw, 64px);
   --r-sm: 12px;
   --r-md: 18px;
@@ -139,7 +139,7 @@ html {
   text-size-adjust: 100%;
   background: var(--ink);
   color-scheme: dark;
-  scrollbar-color: #3a2c22 var(--ink);
+  scrollbar-color: #3a3834 var(--ink);
   scrollbar-width: thin;
 }
 
@@ -151,7 +151,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.62;
   font-weight: 400;
-  caret-color: var(--ember);
+  caret-color: var(--glass-edge);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -168,18 +168,19 @@ body::after {
 
 img { max-width: 100%; height: auto; }
 a { color: inherit; }
+p { text-wrap: pretty; }
 
-::selection { background: var(--ember); color: #120a06; }
+::selection { background: var(--glass-edge); color: #120a06; }
 
 :focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--glass-light);
   outline-offset: 3px;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--ink); }
-::-webkit-scrollbar-thumb { background: #372a21; border: 3px solid var(--ink); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: #373634; border: 3px solid var(--ink); border-radius: 99px; }
 
 .wrap {
   width: 100%;
@@ -192,7 +193,7 @@ a { color: inherit; }
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--ember);
+  background: var(--glass-edge);
   color: #120a06;
   padding: 12px 18px;
   border-radius: 0 0 var(--r-sm) 0;
@@ -216,7 +217,7 @@ a { color: inherit; }
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
     inset 0 -1px 0 rgba(0, 0, 0, 0.42),
-    inset 0 0 26px rgba(255, 217, 160, 0.06),
+    inset 0 0 26px rgba(242, 236, 227, 0.06),
     0 20px 44px -24px rgba(0, 0, 0, 0.95);
 }
 
@@ -257,7 +258,7 @@ a { color: inherit; }
   height: 100%;
   width: 0%;
   border-radius: 0 99px 99px 0;
-  background: linear-gradient(90deg, var(--ember), var(--heat));
+  background: linear-gradient(90deg, var(--glass-edge), var(--glass-highlight));
 }
 
 /* ---------- Шапка: плавающая стеклянная панель ---------- */
@@ -297,8 +298,8 @@ a { color: inherit; }
   height: 42px;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255, 217, 160, 0.45);
-  box-shadow: inset 0 0 14px rgba(244, 87, 31, 0.3), 0 4px 14px -6px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(242, 236, 227, 0.45);
+  box-shadow: inset 0 0 14px rgba(242, 236, 227, 0.3), 0 4px 14px -6px rgba(0, 0, 0, 0.9);
   flex: none;
 }
 .brand-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -424,12 +425,12 @@ html.has-3d .hero-veil {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--amber);
+  color: var(--glass-light);
   padding-bottom: 4px;
-  border-bottom: 1px solid rgba(255, 169, 77, 0.4);
+  border-bottom: 1px solid rgba(242, 236, 227, 0.4);
   transition: color 0.25s var(--ease), border-color 0.25s var(--ease), gap 0.25s var(--ease);
 }
-.link-arrow:hover { color: var(--heat); border-color: var(--heat); gap: 16px; }
+.link-arrow:hover { color: var(--glass-highlight); border-color: var(--glass-highlight); gap: 16px; }
 
 .hero h1 {
   margin: 0 0 clamp(20px, 2.4vw, 30px);
@@ -496,13 +497,13 @@ html.has-3d .hero-veil {
   pointer-events: none;
 }
 
-.btn:hover { transform: translateY(-2px); border-color: rgba(255, 217, 160, 0.5); }
+.btn:hover { transform: translateY(-2px); border-color: rgba(242, 236, 227, 0.5); }
 .btn:hover::before { transform: translateX(120%); }
 .btn:active { transform: translateY(0); }
 
 .btn--glass { color: var(--bone); }
 
-.btn--ember {
+.btn--glass-primary {
   color: var(--bone);
   border-color: rgba(255, 255, 255, 0.34);
   background:
@@ -553,7 +554,7 @@ html.has-3d .hero-veil {
   right: 0;
   height: 2px;
   border-radius: 99px;
-  background: linear-gradient(90deg, rgba(255, 217, 160, 0.42), rgba(255, 217, 160, 0.1) 60%, rgba(255, 217, 160, 0));
+  background: linear-gradient(90deg, rgba(242, 236, 227, 0.42), rgba(242, 236, 227, 0.1) 60%, rgba(242, 236, 227, 0));
   z-index: 1;
 }
 .rig-arm { top: 0; }
@@ -597,7 +598,7 @@ html.has-3d .hero-veil {
   z-index: 2;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(70% 60% at 50% 92%, rgba(255, 176, 90, 0.85), rgba(244, 87, 31, 0.35) 46%, transparent 74%);
+  background: radial-gradient(70% 60% at 50% 92%, rgba(242, 236, 227, 0.85), rgba(242, 236, 227, 0.35) 46%, transparent 74%);
   mix-blend-mode: screen;
 }
 
@@ -613,11 +614,11 @@ html.has-3d .hero-veil {
 }
 
 .panel:hover {
-  border-color: rgba(255, 217, 160, 0.55);
+  border-color: rgba(242, 236, 227, 0.55);
   box-shadow:
     0 54px 90px -40px rgba(0, 0, 0, 0.98),
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 0 0 1px rgba(255, 169, 77, 0.35);
+    0 0 0 1px rgba(242, 236, 227, 0.35);
 }
 
 .panel--main { left: 0; top: 0; width: 66%; transform: rotate(-1deg); }
@@ -716,13 +717,13 @@ html.has-3d .hero-veil {
   border-top: 1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(11, 10, 9, 0.92), rgba(11, 10, 9, 0.98) 40%),
-    radial-gradient(80% 60% at 82% 0%, rgba(244, 87, 31, 0.12), transparent 62%);
+    radial-gradient(80% 60% at 82% 0%, rgba(242, 236, 227, 0.12), transparent 62%);
 }
 
 .case--smena {
   background:
     linear-gradient(180deg, rgba(11, 10, 9, 0.92), rgba(11, 10, 9, 0.98) 40%),
-    radial-gradient(80% 60% at 18% 0%, rgba(244, 87, 31, 0.08), transparent 62%);
+    radial-gradient(80% 60% at 18% 0%, rgba(242, 236, 227, 0.08), transparent 62%);
 }
 
 .case-head {
@@ -771,7 +772,7 @@ h2 {
   bottom: 0;
   left: var(--split);
   width: 1px;
-  background: var(--heat);
+  background: var(--glass-highlight);
   z-index: 3;
 }
 
@@ -789,14 +790,14 @@ h2 {
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  color: var(--heat);
+  color: var(--glass-highlight);
   font-size: 0.95rem;
   z-index: 4;
   pointer-events: none;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 12px 26px -12px rgba(0, 0, 0, 0.9);
 }
 
-.compare:focus-within .cmp-grip { outline: 2px solid var(--amber); outline-offset: 4px; }
+.compare:focus-within .cmp-grip { outline: 2px solid var(--glass-light); outline-offset: 4px; }
 
 .cmp-range {
   position: absolute;
@@ -822,7 +823,7 @@ h2 {
   background: rgba(11, 10, 9, 0.55);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  color: var(--heat);
+  color: var(--glass-highlight);
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -912,7 +913,7 @@ h2 {
   top: 0.72em;
   width: 13px;
   height: 1px;
-  background: var(--ember);
+  background: var(--glass-edge);
 }
 
 .case-truth p { margin: 0 0 16px; color: var(--bone-dim); max-width: 52ch; }
@@ -958,7 +959,7 @@ h2 {
   font-family: var(--display);
   font-weight: 700;
   font-size: 0.78rem;
-  color: var(--ember);
+  color: var(--glass-edge);
   padding-top: 0.55em;
   letter-spacing: 0.04em;
 }
@@ -1003,6 +1004,47 @@ h2 {
 }
 
 .service dd { margin: 0; color: var(--bone-dim); max-width: 58ch; }
+
+/* ---------- Частые вопросы ---------- */
+
+.faq {
+  padding-block: clamp(64px, 9vh, 120px);
+  border-top: 1px solid var(--line);
+}
+.faq-list {
+  margin-top: clamp(26px, 3vw, 42px);
+  border-top: 1px solid var(--line);
+}
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 64px;
+  padding-block: 14px;
+  color: var(--bone);
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { content: ""; }
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  color: var(--glass-light);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-answer {
+  max-width: 64ch;
+  margin: 0;
+  padding: 0 36px 20px 0;
+  color: var(--bone-dim);
+}
 
 /* ---------- Обо мне ---------- */
 
@@ -1054,7 +1096,7 @@ h2 {
   overflow: clip;
   padding-top: clamp(80px, 12vh, 150px);
   padding-bottom: clamp(80px, 12vh, 150px);
-  border-top: 1px solid rgba(255, 169, 77, 0.22);
+  border-top: 1px solid rgba(242, 236, 227, 0.22);
   background: var(--ink);
 }
 
@@ -1104,7 +1146,7 @@ h2 {
   text-decoration-thickness: 1px;
   transition: color 0.2s var(--ease);
 }
-.phone:hover { color: var(--heat); }
+.phone:hover { color: var(--glass-highlight); }
 
 .bloom-echo {
   position: absolute;
@@ -1116,7 +1158,7 @@ h2 {
   z-index: 1;
   pointer-events: none;
   transform: scaleX(-1) rotate(-6deg);
-  filter: drop-shadow(0 0 60px rgba(244, 87, 31, 0.4));
+  filter: drop-shadow(0 0 60px rgba(242, 236, 227, 0.4));
 }
 
 /* ---------- Подвал ---------- */
@@ -1146,7 +1188,7 @@ h2 {
   border-radius: 4px;
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.foot-nav a:hover { color: var(--bone); border-bottom-color: var(--ember); }
+.foot-nav a:hover { color: var(--bone); border-bottom-color: var(--glass-edge); }
 
 .foot-note { margin: 0; color: var(--muted); line-height: 1.5; }
 
@@ -1195,6 +1237,8 @@ h2 {
   .step p { grid-area: text; }
 
   .service { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .faq-item summary { gap: 16px; min-height: 60px; font-size: .96rem; }
+  .faq-answer { padding-right: 0; }
   .bloom-echo { display: none; }
 }
 
@@ -1202,7 +1246,7 @@ h2 {
   body { font-size: 1rem; }
   .hero h1 { font-size: clamp(1.95rem, 9.4vw, 2.7rem); }
   .actions .btn { width: 100%; justify-content: space-between; }
-  .contact-actions .btn--ember { width: 100%; justify-content: space-between; }
+  .contact-actions .btn--glass-primary { width: 100%; justify-content: space-between; }
   .foot-inner { flex-direction: column; gap: 18px; }
   .cmp-grip { width: 44px; height: 44px; }
   .panel figcaption { font-size: 0.72rem; }
@@ -1222,6 +1266,32 @@ h2 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* LUMA — самостоятельный продуктовый концепт с отдельной визуальной системой. */
+.case--luma .luma-board {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(242, 236, 227, .24);
+  border-radius: 18px;
+  background: #0d0b09;
+  box-shadow: 0 28px 65px -42px rgba(0, 0, 0, .92), inset 0 1px 0 rgba(255,255,255,.13);
+}
+.case--luma .luma-board img { display: block; width: 100%; height: auto; }
+.case--luma .luma-board figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 15px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: var(--muted);
+  font-size: .8125rem;
+  letter-spacing: .03em;
+}
+.case--luma .case-truth { border-color: rgba(242, 236, 227, .18); }
+@media (max-width: 560px) {
+  .case--luma .luma-board { border-radius: 12px; }
+  .case--luma .luma-board figcaption { align-items: flex-start; flex-direction: column; gap: 4px; padding: 10px 12px; font-size: .8125rem; }
 }
 
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Иллюстрация барбера Марка">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e5eaf1"/><stop offset="1" stop-color="#c5d2e1"/></linearGradient><linearGradient id="shirt" x2="0" y2="1"><stop stop-color="#627690"/><stop offset="1" stop-color="#3d526b"/></linearGradient></defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg)"/><circle cx="80" cy="76" r="58" fill="#f4f5f4" opacity=".45"/>
+  <path d="M28 160c4-31 22-48 52-48s48 17 52 48" fill="url(#shirt)"/><path d="M49 66c1-28 14-44 34-44 21 0 33 16 31 44l-3 28c-2 23-13 36-29 36-18 0-29-15-31-37z" fill="#493a34"/>
+  <ellipse cx="80" cy="74" rx="27" ry="34" fill="#d8a27e"/><path d="M53 64c1-24 13-37 31-37 16 0 27 10 30 28-11-4-20-12-26-22-7 12-18 22-35 26z" fill="#433832"/><path d="M55 84c3 16 10 25 25 29-15 8-31-3-35-21-2-10 1-21 8-29zM105 82c-1 15-6 25-17 31 15 2 27-10 28-25 1-8-2-17-8-23z" fill="#493a34"/><path d="M56 84c6 5 12 5 16 2 2 8 5 12 8 12 4 0 7-4 9-12 4 3 10 3 16-2-1 17-9 31-25 32-15-1-23-15-24-32z" fill="#554039"/>
+  <path d="M68 74h7M87 74h7" stroke="#3e3430" stroke-width="2.4" stroke-linecap="round"/><path d="M73 91c4 2 9 2 13 0" fill="none" stroke="#c2856e" stroke-width="2" stroke-linecap="round"/><path d="M64 67c4-3 8-3 12-1M85 66c4-2 9-1 12 2" fill="none" stroke="#443731" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M66 109c4 9 9 13 14 13s11-4 15-13l12 10-5 41H58l-5-41z" fill="#f0eee7"/><path d="M71 124l9 10 9-10" fill="none" stroke="#8498af" stroke-width="2"/>
+</svg>

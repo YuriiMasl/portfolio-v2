@@ -1,4 +1,4 @@
-"""Focused hero contract + all local resource checks.
+"""Focused portfolio contract + all local resource checks.
 Run: skpy tools/check_portfolio.py [http://127.0.0.1:PORT/]
 """
 from html.parser import HTMLParser
@@ -58,16 +58,27 @@ class PortfolioChecks(unittest.TestCase):
                     with Image.open(path) as image:
                         image.verify()
 
-    def test_hero_has_one_action_and_no_telegram(self):
+    def test_hero_offers_direct_contact_and_case_browse(self):
         hero = HTML.split('<section class="hero"', 1)[1].split('</section>', 1)[0]
         links = re.findall(r'<a\b[^>]+href="([^"]+)"', hero)
-        self.assertEqual(links, ['#work'])
-        self.assertNotIn('Написать в Telegram', hero)
+        self.assertEqual(links, ['https://t.me/IOpaWho', '#work'])
+        self.assertIn('Написать в Telegram', hero)
+        self.assertIn('Смотреть проекты', hero)
         self.assertEqual(hero.count('class="line-in"'), 2)
-        self.assertIn('Это образцы, а не заказы клиентов', hero)
+        self.assertIn('Стадия каждого обозначена честно', hero)
         layout = json.loads((ROOT / 'assets' / 'hero-layout.json').read_text(encoding='utf-8'))
-        self.assertEqual(layout['text']['cta'], 'Показать кейсы')
-        self.assertIn('Два макета', layout['text']['facts'])
+        self.assertEqual(layout['text']['cta'], 'Написать в Telegram')
+        self.assertIn('Три проекта: два демо-сайта и концепт', layout['text']['facts'])
+
+    def test_case_catalog_selects_each_project(self):
+        catalog = HTML.split('<section class="case-index"', 1)[1].split('</section>', 1)[0]
+        destinations = re.findall(r'<a class="case-shelf__item" href="([^"]+)"', catalog)
+        self.assertEqual(destinations, ['#case-flowers', '#smena', '#luma'])
+        self.assertIn('assets/lyublyu-hero.webp', catalog)
+        self.assertIn('assets/smena-hero.webp', catalog)
+        self.assertIn('cases/luma/screenshots/dashboard.jpg', catalog)
+        self.assertIn('Демо-сайт', catalog)
+        self.assertIn('Концепт продукта', catalog)
 
     def test_hero_frame_fits_and_keeps_the_floor(self):
         """Кадр помещается в окно целиком, а фон живёт внутри кадра — иначе стойка уезжает с пола."""
@@ -83,7 +94,7 @@ class PortfolioChecks(unittest.TestCase):
         layout_js = (ROOT / 'hero-layout.js').read_text(encoding='utf-8')
         self.assertIn('html.hero-ready .hero-stage', CSS)
         self.assertIn("classList.add('hero-ready')", layout_js)
-        self.assertLess(HTML.index('--stage-scale'), HTML.index('id="work"'))
+        self.assertLess(HTML.index('--stage-scale'), HTML.index('<section class="case-index"'))
 
     def test_real_screen_and_supplied_layers(self):
         for name in ('workshop', 'stand', 'glass', 'screen-main'):
@@ -106,7 +117,15 @@ class PortfolioChecks(unittest.TestCase):
             if tag == 'a' and href.startswith('#'):
                 self.assertIn(href[1:], ids)
         telegram = [a for t, a in DOCUMENT.elements if t == 'a' and a.get('href') == 'https://t.me/IOpaWho']
-        self.assertEqual(len(telegram), 2)  # header + contact, not hero copy
+        self.assertEqual(len(telegram), 3)  # header + hero + contact
+        menu = HTML.split('<details class="mobile-menu">', 1)[1].split('</details>', 1)[0]
+        self.assertEqual(re.findall(r'<a href="([^"]+)"', menu), ['#work', '#services', '#process', '#about', '#faq', '#contact'])
+        self.assertEqual(HTML.count('<details class="faq-item">'), 6)
+        self.assertIn('<dt>Сайт под ключ</dt>', HTML)
+        self.assertIn('<dt>Каталог товаров и услуг</dt>', HTML)
+        self.assertIn('<dt>Редизайн сайта</dt>', HTML)
+        self.assertNotIn('Отвечу в тот же день', HTML)
+        self.assertIn("if (menu) menu.open = false", JS)
         self.assertIn('tel:+79292322074', HTML)
         self.assertIn('https://yuriimasl.github.io/lyublyu-demo/', HTML)
 
@@ -125,9 +144,10 @@ class PortfolioChecks(unittest.TestCase):
         self.assertIn('href="cases/smena/"', HTML)
         self.assertIn('assets/smena-hero.webp', HTML)
         self.assertIn('assets/smena-mobile.webp', HTML)
-        self.assertIn('два демо-макета', HTML)
+        self.assertIn('три демо-кейса', HTML)
         self.assertIn('Цветочный салон', HTML)
         self.assertIn('Кофейня и обжарка', HTML)
+        self.assertIn('LUMA', HTML)
         self.assertIn('придуманы', HTML)
 
     def test_smena_case_files_exist(self):
@@ -155,6 +175,39 @@ class PortfolioChecks(unittest.TestCase):
             with Image.open(path) as image:
                 self.assertEqual(image.size, size)
 
+    def test_luma_case_files_exist(self):
+        case = ROOT / 'cases' / 'luma'
+        html = case / 'index.html'
+        self.assertTrue(html.is_file(), html)
+        text = html.read_text(encoding='utf-8')
+        self.assertIn('LUMA', text)
+        self.assertIn('Интерактивная демонстрация', text)
+        for rel in (
+            'styles.css',
+            'app.js',
+            'assets/nina.svg',
+            'assets/mark.svg',
+            'assets/alisa.svg',
+            'screenshots/dashboard.jpg',
+            'screenshots/calendar.jpg',
+            'screenshots/calendar-day.jpg',
+            'screenshots/appointments.jpg',
+            'screenshots/booking.jpg',
+            'screenshots/client-home.jpg',
+            'screenshots/mobile-booking.jpg',
+        ):
+            path = case / rel
+            self.assertTrue(path.is_file(), path)
+            self.assertGreater(path.stat().st_size, 0)
+        for name, size in (
+            ('dashboard.jpg', (1440, 900)),
+            ('calendar.jpg', (1440, 900)),
+            ('booking.jpg', (1440, 900)),
+            ('mobile-booking.jpg', (375, 844)),
+        ):
+            with Image.open(case / 'screenshots' / name) as image:
+                self.assertEqual(image.size, size)
+
     @unittest.skipUnless(BASE_URL, 'Pass the live preview URL to check HTTP resources')
     def test_http_all_resources(self):
         for resource in [''] + local_resources():
@@ -179,6 +232,29 @@ class PortfolioChecks(unittest.TestCase):
                     self.assertEqual(response.status, 200)
                     self.assertTrue(response.read())
         print('Smena HTTP resources: 6 OK')
+
+    @unittest.skipUnless(BASE_URL, 'Pass the live preview URL to check HTTP resources')
+    def test_luma_http(self):
+        for rel in (
+            'cases/luma/',
+            'cases/luma/styles.css',
+            'cases/luma/app.js',
+            'cases/luma/assets/nina.svg',
+            'cases/luma/assets/mark.svg',
+            'cases/luma/assets/alisa.svg',
+            'cases/luma/screenshots/dashboard.jpg',
+            'cases/luma/screenshots/calendar.jpg',
+            'cases/luma/screenshots/calendar-day.jpg',
+            'cases/luma/screenshots/appointments.jpg',
+            'cases/luma/screenshots/booking.jpg',
+            'cases/luma/screenshots/client-home.jpg',
+            'cases/luma/screenshots/mobile-booking.jpg',
+        ):
+            with self.subTest(rel=rel):
+                with urlopen(urljoin(BASE_URL, rel), timeout=8) as response:
+                    self.assertEqual(response.status, 200)
+                    self.assertTrue(response.read())
+        print('LUMA HTTP resources: 13 OK')
 
 
 if __name__ == '__main__':

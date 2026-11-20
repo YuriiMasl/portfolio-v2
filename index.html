@@ -3,24 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Юрий: сайты для малого бизнеса</title>
-<meta name="description" content="Юрий, разработчик сайтов из Воронежа. Делаю небольшие сайты для малого бизнеса: цветочный салон, кофейня, мастерская. В портфолио два демо-макета, оба можно открыть и потрогать.">
+<title>Юрий — сайты и витрины для малого бизнеса</title>
+<meta name="description" content="Юрий, разработчик сайтов из Воронежа. Сайты-визитки и витрины для малого бизнеса. Три демонстрационных проекта: цветочный салон, кофейня и концепт LUMA.">
 <meta name="theme-color" content="#0B0A09">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Юрий — сайты, которые держат форму">
-<meta property="og:description" content="Сайты для малого бизнеса: разбор задачи, форма, проверка на прочность. Два демо-макета открыты целиком.">
+<meta property="og:title" content="Юрий — сайты и витрины для малого бизнеса">
+<meta property="og:description" content="Выберите один из трёх демонстрационных проектов и напишите Юрию, чтобы обсудить сайт для вашего дела.">
 <meta property="og:locale" content="ru_RU">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta name="theme-color" content="#0B0A09">
 <link rel="preload" href="assets/fonts/oswald-cyrillic-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/golos-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/golos-cyrillic-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/hero/workshop.webp" as="image">
-<link rel="stylesheet" href="workshop.css?v=1794921502">
-<link rel="stylesheet" href="hero.css?v=20261119n">
+<link rel="stylesheet" href="workshop.css?v=20261120c3">
+<link rel="stylesheet" href="hero.css?v=20261120c4">
 
 <noscript><style>.hero-stage{opacity:1}</style></noscript>
 </head>
@@ -41,9 +40,21 @@
         </span>
       </a>
       <nav class="tabs" aria-label="Основная навигация">
-        <a class="tab" href="#work">Работа</a>
+        <a class="tab" href="#work">Работы</a>
+        <a class="tab" href="#services">Услуги</a>
         <a class="tab" href="#process">Процесс</a>
         <a class="tab" href="#about">Обо мне</a>
+        <details class="mobile-menu">
+          <summary class="tab mobile-menu__toggle">Меню <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 6 4.5 4 4.5-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+          <div class="mobile-menu__panel">
+            <a href="#work">Выбрать проект</a>
+            <a href="#services">Что можно заказать</a>
+            <a href="#process">Как я работаю</a>
+            <a href="#about">Обо мне</a>
+            <a href="#faq">Частые вопросы</a>
+            <a href="#contact">Контакты</a>
+          </div>
+        </details>
         <a class="tab tab--accent" href="https://t.me/IOpaWho" target="_blank" rel="noopener">Telegram <svg class="arrow-solid arrow-solid--up" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.9h9.4V4.9L21.9 12l-9.5 7.1v-5H3a1 1 0 0 1 0-2.2Z" fill="currentColor" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg></a>
       </nav>
     </div>
@@ -61,13 +72,16 @@
     </div>
 
     <div class="hero-copy" data-layer="copy">
-      <p class="hero-intro" data-text="intro">Небольшие сайты для небольших дел:<br class="desktop-break"> цветочный салон, кофейня, мастерская.<br>Делаю сам. Воронеж, работаю по России.</p>
+      <p class="hero-intro" data-text="intro">Сайты для малого бизнеса:<br class="desktop-break"> услуги, товары и удобная связь.</p>
       <h1 id="hero-title" data-text="title">
         <span class="line"><span class="line-in">Выдуваю сайты,</span></span>
         <span class="line"><span class="line-in">как стекло</span></span>
       </h1>
-      <a class="glass-cta" href="#work" data-text="cta">Показать кейсы <svg class="arrow-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 2.6 2.9 10.4a1.2 1.2 0 0 0 .1 2.2l7.1 2.8 2.8 7.1a1.2 1.2 0 0 0 2.2.1L21.4 2.6Z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></a>
-      <p class="hero-facts" data-text="facts">Два макета, сделаны руками<br>Это образцы, а не заказы клиентов</p>
+      <div class="hero-actions">
+        <a class="glass-cta" href="https://t.me/IOpaWho" target="_blank" rel="noopener" data-text="cta">Написать в Telegram <svg class="arrow-solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 2.6 2.9 10.4a1.2 1.2 0 0 0 .1 2.2l7.1 2.8 2.8 7.1a1.2 1.2 0 0 0 2.2.1L21.4 2.6Z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></a>
+        <a class="hero-secondary" href="#work">Смотреть проекты</a>
+      </div>
+      <p class="hero-facts" data-text="facts">Три проекта: два демо-сайта и концепт<br>Стадия каждого обозначена честно</p>
     </div>
 
     <div class="hero-exhibit" data-layer="exhibit" role="group" aria-label="Экран демо-макета на металлической стойке">
@@ -107,7 +121,54 @@
     })();
   </script>
 
-  <section class="case" id="work" aria-labelledby="work-title">
+  <section class="case-index" id="work" aria-labelledby="case-index-title">
+    <div class="wrap">
+      <div class="case-index__head">
+        <h2 id="case-index-title">Выберите проект</h2>
+        <p>Цветочный салон, кофейня и интерфейс для студии. Откройте работу, которая ближе к вашей задаче.</p>
+      </div>
+      <nav class="case-shelf" aria-label="Каталог демонстрационных проектов">
+        <a class="case-shelf__item" href="#case-flowers">
+          <span class="case-shelf__image">
+            <img src="assets/lyublyu-hero.webp" width="1440" height="900" alt="" loading="lazy" decoding="async">
+            <span class="case-shelf__stage">Демо-сайт</span>
+          </span>
+          <span class="case-shelf__details">
+            <span class="case-shelf__type">Цветочный салон</span>
+            <strong class="case-shelf__title">«Люблю, целую»</strong>
+            <span class="case-shelf__description">Витрина букетов и выбор по бюджету</span>
+            <span class="case-shelf__link">Открыть разбор <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </a>
+        <a class="case-shelf__item" href="#smena">
+          <span class="case-shelf__image">
+            <img src="assets/smena-hero.webp" width="1430" height="900" alt="" loading="lazy" decoding="async">
+            <span class="case-shelf__stage">Демо-сайт</span>
+          </span>
+          <span class="case-shelf__details">
+            <span class="case-shelf__type">Кофейня</span>
+            <strong class="case-shelf__title">«Смена»</strong>
+            <span class="case-shelf__description">Меню, фильтры и расписание</span>
+            <span class="case-shelf__link">Открыть разбор <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </a>
+        <a class="case-shelf__item" href="#luma">
+          <span class="case-shelf__image">
+            <img src="cases/luma/screenshots/dashboard.jpg" width="1440" height="900" alt="" loading="lazy" decoding="async">
+            <span class="case-shelf__stage">Концепт продукта</span>
+          </span>
+          <span class="case-shelf__details">
+            <span class="case-shelf__type">Запись для студии</span>
+            <strong class="case-shelf__title">LUMA</strong>
+            <span class="case-shelf__description">Запись клиентов и рабочая панель</span>
+            <span class="case-shelf__link">Открыть разбор <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="case" id="case-flowers" aria-labelledby="work-title">
     <div class="wrap">
       <div class="case-head">
         <h2 id="work-title" class="fade">Цветочный салон:<br>букет за две минуты</h2>
@@ -134,7 +195,7 @@
             <li>Поставил цены S, M, XL и кнопку заказа в мессенджер. Текст заказа подставляется сам.</li>
             <li>Проверил на телефоне и с клавиатуры. Без JavaScript страница тоже читается.</li>
           </ul>
-          <a class="btn btn--glass btn--ember" href="https://yuriimasl.github.io/lyublyu-demo/" target="_blank" rel="noopener">Открыть демо-макет<span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn btn--glass btn--glass-primary" href="https://yuriimasl.github.io/lyublyu-demo/" target="_blank" rel="noopener">Открыть демо-макет<span class="arr" aria-hidden="true">↗</span></a>
           <p class="note">Цифр и отзывов у макета нет.</p>
         </div>
         <div class="case-truth fade">
@@ -171,13 +232,45 @@
             <li>Часы «открыто до…», номер смены и меню, которое работает с клавиатуры.</li>
             <li>Бумага, кобальт и розовый. Фото в дуотоне, шрифты лежат в проекте.</li>
           </ul>
-          <a class="btn btn--glass btn--ember" href="cases/smena/" target="_blank" rel="noopener">Открыть демо-макет<span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn btn--glass btn--glass-primary" href="cases/smena/" target="_blank" rel="noopener">Открыть демо-макет<span class="arr" aria-hidden="true">↗</span></a>
           <p class="note">Название, меню и события придуманы.</p>
         </div>
         <div class="case-truth fade">
           <h3>Что здесь честно</h3>
           <p>Отзывов, логотипов клиентов и цифр здесь нет: их пока не существует.</p>
           <p>Чужие работы своим именем не подписываю, поэтому в портфолио только мои макеты.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case case--luma" id="luma" aria-labelledby="luma-title">
+    <div class="wrap">
+      <div class="case-head">
+        <h2 id="luma-title" class="fade">Запись для клиента.<br>Порядок для владельца.</h2>
+        <p class="lead fade">LUMA — демонстрационный цифровой продукт для небольших студий и сервисных команд. Клиент сам выбирает услугу и время, владелец ведёт расписание, команду и базу в одном месте.</p>
+      </div>
+
+      <figure class="luma-board glass-frame">
+        <img src="cases/luma/screenshots/dashboard.jpg" width="1440" height="900" alt="Панель управления LUMA: расписание недели, записи и услуги студии" loading="lazy" decoding="async">
+        <figcaption><span>Рабочая панель · демо-данные</span><span>широкий экран 1440</span></figcaption>
+      </figure>
+
+      <div class="case-body">
+        <div class="case-what fade">
+          <h3>Что можно попробовать</h3>
+          <ul class="ticks">
+            <li>Пошаговую запись: услуга, специалист, дата, время и контакты.</li>
+            <li>Расписание, статусы, поиск по записям и карточки клиентов.</li>
+            <li>Изменение услуг и команды с сохранением в браузере.</li>
+          </ul>
+          <a class="btn btn--glass btn--glass-primary" href="cases/luma/" target="_blank" rel="noopener">Открыть интерактивный кейс<span class="arr" aria-hidden="true">↗</span></a>
+          <p class="note">Концепт продукта · все данные демонстрационные.</p>
+        </div>
+        <div class="case-truth fade">
+          <h3>Что здесь честно</h3>
+          <p>LUMA — самостоятельный концепт, не внедрение для клиента. Имена, записи и суммы придуманы, реальные уведомления не отправляются.</p>
+          <p>Я делаю сайты и интерфейсы для малого бизнеса. Если у вас свой процесс записи или продаж, его можно спроектировать под вашу задачу.</p>
         </div>
       </div>
     </div>
@@ -203,34 +296,66 @@
         <li class="step fade">
           <span class="step-num" aria-hidden="true">03</span>
           <h3>Вёрстка</h3>
-          <p>Текст, шрифты, отступы, мобильная версия. Сайт простой: открывается быстро и не зависит от чужих сервисов.</p>
+          <p>Текст, шрифты, отступы и мобильная версия. Оставляю только то, что нужно сайту для работы.</p>
         </li>
         <li class="step fade">
           <span class="step-num" aria-hidden="true">04</span>
           <h3>Проверка</h3>
-          <p>Телефон, клавиатура, контраст, медленный интернет. После запуска правки и вопросы на мне.</p>
+          <p>Перед запуском проверяю сайт на телефоне и компьютере. Что понадобится после, обсудим отдельно.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="services" aria-labelledby="services-title">
+  <section class="services" id="services" aria-labelledby="services-title">
     <div class="wrap">
       <h2 id="services-title" class="fade">Что можно заказать</h2>
       <dl class="service-list">
         <div class="service fade">
-          <dt>Сайт-визитка</dt>
-          <dd>Чем вы занимаетесь, где вас найти и как написать. Для мастера, врача, репетитора.</dd>
+          <dt>Сайт под ключ</dt>
+          <dd>Структура, дизайн и разработка сайта для услуг, студии или локального бизнеса.</dd>
         </div>
         <div class="service fade">
-          <dt>Витрина с выбором</dt>
-          <dd>Товар с ценой и заказом в мессенджер: цветы, кофе, мебель, услуги.</dd>
+          <dt>Каталог товаров и услуг</dt>
+          <dd>Витрина с категориями, карточками и понятным путём к заказу.</dd>
         </div>
         <div class="service fade">
-          <dt>Разбор старого сайта</dt>
-          <dd>Сайт есть, но с него не пишут. Посмотрю, где теряется человек, и скажу, что менять первым.</dd>
+          <dt>Редизайн сайта</dt>
+          <dd>Обновлю структуру, визуальный стиль и мобильную версию существующего сайта.</dd>
         </div>
       </dl>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title" class="fade">Частые вопросы</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Сколько стоит сайт?</summary>
+          <p class="faq-answer">Стоимость зависит от объёма, структуры и нужных функций. Напишите, что хотите показать и как клиенты оформляют заказ, — после обсуждения определим состав работ и цену до старта.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Сколько времени занимает разработка?</summary>
+          <p class="faq-answer">Срок зависит от объёма сайта и готовности материалов. Обсудим его после того, как определим структуру и список страниц.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Кто готовит тексты и изображения?</summary>
+          <p class="faq-answer">До начала соберём факты о бизнесе, услуги, контакты и изображения. Я помогу понять, чего не хватает; кто готовит каждый материал, согласуем отдельно.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Поможешь с доменом и публикацией?</summary>
+          <p class="faq-answer">На старте обсудим адрес сайта и размещение. Подскажу, что потребуется для запуска, а кто оформляет домен и хостинг — договоримся заранее.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Смогу ли я менять сайт самостоятельно?</summary>
+          <p class="faq-answer">Это зависит от выбранного способа разработки. До начала обсудим, какие материалы вы хотите менять сами, и выберем подходящий формат.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Что будет после публикации?</summary>
+          <p class="faq-answer">Перед запуском проверю сайт на телефоне и компьютере. Если после публикации понадобятся изменения, отдельно обсудим их объём.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -243,7 +368,7 @@
       <div class="about-copy">
         <h2 id="about-title" class="fade">Меня зовут Юрий.<br>Делаю сам, от первой встречи до запуска.</h2>
         <p class="fade">Без агентства и менеджеров: вы говорите со мной, я же и собираю страницу. Беру небольшие дела, где сайт нужен, чтобы человек выбрал и написал.</p>
-        <p class="fade">В портфолио два демо-макета. Чужие работы своим именем не подписываю. Следующим станет ваш сайт.</p>
+        <p class="fade">В портфолио три демо-кейса: цветочный салон, кофейня и цифровой продукт LUMA. Чужие работы своим именем не подписываю. Следующим может стать ваш сайт.</p>
       </div>
     </div>
   </section>
@@ -252,15 +377,15 @@
     <img class="contact-bg" src="assets/molten-texture.webp" width="1200" height="800" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="wrap">
       <h2 id="contact-title" class="fade">Расскажите, чем занимаетесь</h2>
-      <p class="lead fade">Двух-трёх предложений хватит: что за бизнес, что хотите показать и как сейчас принимаете заказы. Отвечу в тот же день и скажу прямо, что стоит делать, а что нет.</p>
+      <p class="lead fade">Расскажите, что за бизнес, что хотите показать и как клиенты оформляют заказы. Обсудим задачу и подходящий формат сайта.</p>
       <div class="contact-actions fade">
-        <a class="btn btn--glass btn--ember btn--big" href="https://t.me/IOpaWho" target="_blank" rel="noopener">Написать в Telegram<span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn btn--glass btn--glass-primary btn--big" href="https://t.me/IOpaWho" target="_blank" rel="noopener">Написать в Telegram<span class="arr" aria-hidden="true">↗</span></a>
         <a class="btn btn--glass" href="https://vk.ru/see_the_root" target="_blank" rel="noopener">ВКонтакте</a>
         <a class="phone" href="tel:+79292322074">+7 929 232-20-74</a>
       </div>
       <p class="note fade">Если сайт уже есть, пришлите ссылку: посмотрю, что мешает людям вам писать.</p>
     </div>
-    <img class="bloom-echo" src="assets/glass-alstroemeria-bright.webp" width="1100" height="1005" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img class="bloom-echo" src="assets/glass-alstroemeria-bright.webp" width="880" height="803" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </section>
 
 </main>
@@ -269,8 +394,10 @@
   <div class="wrap foot-inner">
     <span class="foot-brand">Юрий · сайты для бизнеса</span>
     <nav class="foot-nav" aria-label="Навигация в подвале">
-      <a href="#work">Работа</a>
+      <a href="#work">Работы</a>
+      <a href="#services">Услуги</a>
       <a href="#process">Процесс</a>
+      <a href="#faq">Вопросы</a>
       <a href="#about">Обо мне</a>
       <a href="#contact">Связаться</a>
     </nav>
@@ -279,10 +406,10 @@
 </footer>
 
 
-<script src="vendor/gsap.min.js" defer></script>
-<script src="vendor/ScrollTrigger.min.js" defer></script>
-<script src="workshop.js?v=1794921502" defer></script>
-<script src="hero-layout.js?v=20261119e" defer></script>
+<script src="vendor/gsap.min.js?v=3.13.0" defer></script>
+<script src="vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
+<script src="workshop.js?v=20261119c1" defer></script>
+<script src="hero-layout.js?v=20261119c1" defer></script>
 <script src="hero-cta.js?v=20261119a" defer></script>
 
 </body>

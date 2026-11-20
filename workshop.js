@@ -24,6 +24,13 @@
   window.addEventListener('resize', updateProgress);
   updateProgress();
 
+  document.querySelectorAll('.mobile-menu__panel a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var menu = link.closest('.mobile-menu');
+      if (menu) menu.open = false;
+    });
+  });
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!window.gsap || !window.ScrollTrigger) return;
   var gsap = window.gsap;

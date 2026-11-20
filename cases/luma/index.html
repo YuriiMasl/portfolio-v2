@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="LUMA — демонстрационный продукт для самостоятельной записи клиентов и управления небольшой студией.">
+  <title>LUMA — запись и управление студией</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='15' fill='%232b382b'/%3E%3Cpath d='M14 12v25h21v-6H21V12z' fill='%23d7efca'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="app.js?v=4" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Перейти к демо-продукту</a>
+
+  <header class="topbar">
+    <a class="topbar__brand" href="#top" aria-label="LUMA — начало страницы">
+      <span class="brand-mark" aria-hidden="true">l</span><span>LUMA</span>
+    </a>
+    <span class="topbar__descriptor">Запись и управление студией</span>
+    <div class="topbar__right">
+      <span class="demo-pill"><i aria-hidden="true"></i> Демо-концепция</span>
+      <a class="portfolio-link" href="../../" aria-label="Вернуться в портфолио">Портфолио <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="product" id="workspace" aria-label="Интерактивная демонстрация LUMA">
+      <div class="product-head">
+        <div>
+          <p class="eyebrow">LUMA · продуктовый концепт</p>
+          <h1>Меньше переписок.<br class="desktop-break"> Больше времени на своё дело.</h1>
+          <p class="product-intro">Клиент выбирает услугу и время сам. Владелец видит расписание, записи и команду в одном рабочем пространстве.</p>
+        </div>
+        <div class="mode-control" role="group" aria-label="Выбрать режим демонстрации">
+          <button class="mode-button is-active" type="button" data-mode="dashboard" aria-pressed="true">
+            <span class="mode-icon" aria-hidden="true">▦</span> Панель
+          </button>
+          <button class="mode-button" type="button" data-mode="booking" aria-pressed="false">
+            <span class="mode-icon" aria-hidden="true">↗</span> Запись клиента
+          </button>
+        </div>
+      </div>
+
+      <div class="app-frame">
+        <aside class="sidebar" aria-label="Разделы панели">
+          <div class="sidebar__studio">
+            <div class="studio-avatar" aria-hidden="true">F</div>
+            <div><strong data-studio-name>Forma Studio</strong><span>Воронеж · демо</span></div>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </div>
+          <p class="sidebar-label">РАБОЧЕЕ ПРОСТРАНСТВО</p>
+          <nav class="side-nav" aria-label="Панель управления">
+            <button class="nav-item is-current" type="button" data-view="overview"><span class="nav-icon" aria-hidden="true">◫</span><span>Обзор</span></button>
+            <button class="nav-item" type="button" data-view="calendar"><span class="nav-icon" aria-hidden="true">▦</span><span>Календарь</span></button>
+            <button class="nav-item" type="button" data-view="appointments"><span class="nav-icon" aria-hidden="true">☷</span><span>Записи</span><span class="nav-count" data-appointment-count>0</span></button>
+            <button class="nav-item" type="button" data-view="clients"><span class="nav-icon" aria-hidden="true">♧</span><span>Клиенты</span></button>
+            <button class="nav-item" type="button" data-view="services"><span class="nav-icon" aria-hidden="true">✳</span><span>Услуги</span></button>
+            <button class="nav-item" type="button" data-view="team"><span class="nav-icon" aria-hidden="true">♙</span><span>Команда</span></button>
+            <button class="nav-item" type="button" data-view="settings"><span class="nav-icon" aria-hidden="true">⚙</span><span>Настройки</span></button>
+          </nav>
+          <div class="sidebar__bottom">
+            <div class="user-chip"><span class="user-avatar">Ю</span><span><strong>Юлия Орлова</strong><small>Владелец</small></span><span class="more">···</span></div>
+          </div>
+        </aside>
+
+        <section class="workspace" aria-live="polite" aria-busy="false">
+          <div class="workspace-topline">
+            <span class="breadcrumb"><span class="breadcrumb-logo">l</span> <span data-studio-name>Forma Studio</span> <span>/</span> <strong data-breadcrumb>Обзор</strong></span>
+            <div class="workspace-actions">
+              <button class="icon-button" type="button" data-action="notifications" aria-label="Уведомления"><span aria-hidden="true">♧</span><i></i></button>
+              <button class="button button--primary button--small" type="button" data-action="new-booking"><span aria-hidden="true">＋</span> Новая запись</button>
+            </div>
+          </div>
+          <div class="view-root" id="view-root"></div>
+        </section>
+      </div>
+      <p class="demo-footnote"><span aria-hidden="true">ⓘ</span> Все имена, расписание и суммы в панели придуманы для демонстрации. Записи сохраняются только в этом браузере.</p>
+    </section>
+
+    <section class="story" id="project-info" aria-labelledby="story-title">
+      <div class="story__main">
+        <p class="eyebrow">ПРОЕКТ 03 · DIGITAL PRODUCT</p>
+        <h2 id="story-title">Запись для клиента.<br>Порядок для владельца.</h2>
+        <p class="story__lead">LUMA собирает два ежедневных сценария в один понятный продукт: клиент записывается без ожидания ответа, а команда управляет расписанием, услугами и клиентской базой.</p>
+        <a class="button button--dark" href="https://t.me/IOpaWho" target="_blank" rel="noopener">Обсудить сайт для вашего бизнеса <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="story__details">
+        <div class="detail-row"><span>Формат</span><strong>Демонстрационный SaaS-продукт</strong></div>
+        <div class="detail-row"><span>Для кого</span><strong>Студии и небольшие сервисные команды</strong></div>
+        <div class="detail-row"><span>Внутри</span><strong>Онлайн-запись · календарь · CRM</strong></div>
+        <div class="detail-row"><span>Моя работа</span><strong>Product design · интерфейс · frontend</strong></div>
+        <p class="story-note">Это концепция, а не внедрение для реального бизнеса. Цифры, клиенты и записи показаны только как демо-данные.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer"><a href="../../">← Вернуться к портфолио</a><span>Сделано Юрием · Воронеж</span></footer>
+
+  <dialog class="dialog" id="dialog" aria-labelledby="dialog-title"></dialog>
+  <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

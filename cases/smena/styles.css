@@ -46,6 +46,7 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
+p { text-wrap: pretty; }
 
 ::selection { background: var(--pink); color: var(--ink); }
 
@@ -471,8 +472,8 @@ section { position: relative; scroll-margin-top: 72px; }
   margin-top: auto;
   padding-top: 24px;
   font-family: var(--mono);
-  font-size: .74rem;
-  letter-spacing: .08em;
+  font-size: .8rem;
+  letter-spacing: .04em;
   color: var(--ink-70);
   display: flex;
   align-items: center;
@@ -916,6 +917,7 @@ section { position: relative; scroll-margin-top: 72px; }
   font-weight: 600;
   line-height: 1.25;
   margin-bottom: 4px;
+  text-wrap: balance;
 }
 .program__body p { font-size: .94rem; line-height: 1.5; color: #2c1019; max-width: 52ch; }
 .program__meta {
@@ -996,8 +998,8 @@ section { position: relative; scroll-margin-top: 72px; }
 .place__now {
   margin-top: 12px;
   font-family: var(--mono);
-  font-size: .74rem;
-  letter-spacing: .06em;
+  font-size: .8rem;
+  letter-spacing: .04em;
   color: var(--ink-70);
   display: flex;
   align-items: center;
