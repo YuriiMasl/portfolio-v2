@@ -24,7 +24,7 @@ web
 
 ## Capabilities and Constraints
 
-Чистая статика: HTML, CSS, ванильный JavaScript, GSAP + ScrollTrigger (вендорятся в репозиторий). Без сборки, без бэкенда, без npm-зависимостей в рантайме. Хостинг — GitHub Pages из ветки main, корень репозитория, адрес https://yuriimasl.github.io/portfolio/. Формы не отправляются на сервер: единственные действия — внешние ссылки в Telegram, ВКонтакте и звонок. Обязательный русский язык, корректен без JavaScript, работает с клавиатуры и при prefers-reduced-motion.
+Чистая статика: HTML, CSS, ванильный JavaScript, GSAP + ScrollTrigger (вендорятся в репозиторий). Без сборки, без бэкенда, без npm-зависимостей в рантайме. Хостинг — GitHub Pages из ветки main репозитория `portfolio-v2`, корень, адрес https://yuriimasl.github.io/portfolio-v2/. Формы не отправляются на сервер: единственные действия — внешние ссылки в Telegram, ВКонтакте и звонок. Обязательный русский язык, корректен без JavaScript, работает с клавиатуры и при prefers-reduced-motion.
 
 ## Brand Commitments
 

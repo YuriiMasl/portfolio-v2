@@ -14,7 +14,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / 'index.html').read_text(encoding='utf-8')
 CSS = (ROOT / 'hero.css').read_text(encoding='utf-8')
+REDESIGN = (ROOT / 'redesign.css').read_text(encoding='utf-8')
 JS = (ROOT / 'workshop.js').read_text(encoding='utf-8')
+MOTION = (ROOT / 'portfolio-motion.js').read_text(encoding='utf-8')
 BASE_URL = sys.argv.pop(1) if len(sys.argv) > 1 else None
 
 
@@ -38,7 +40,7 @@ def local_resources():
         value = attrs.get(key, '')
         if value and not urlsplit(value).scheme:
             resources.add(urlsplit(value).path)
-    for filename in ('workshop.css', 'hero.css'):
+    for filename in ('workshop.css', 'hero.css', 'redesign.css'):
         text = (ROOT / filename).read_text(encoding='utf-8')
         for value in re.findall(r'url\([\"\']?([^\)\"\']+)', text):
             if not urlsplit(value).scheme and not unquote(value).startswith('#'):
@@ -62,13 +64,18 @@ class PortfolioChecks(unittest.TestCase):
         hero = HTML.split('<section class="hero"', 1)[1].split('</section>', 1)[0]
         links = re.findall(r'<a\b[^>]+href="([^"]+)"', hero)
         self.assertEqual(links, ['https://t.me/IOpaWho', '#work'])
-        self.assertIn('Написать в Telegram', hero)
+        self.assertIn('Обсудить проект в Telegram', hero)
         self.assertIn('Смотреть проекты', hero)
         self.assertEqual(hero.count('class="line-in"'), 2)
-        self.assertIn('Стадия каждого обозначена честно', hero)
+        self.assertIn('Напрямую со мной', hero)
+        self.assertNotIn('Стадия каждого обозначена честно', hero)
         layout = json.loads((ROOT / 'assets' / 'hero-layout.json').read_text(encoding='utf-8'))
-        self.assertEqual(layout['text']['cta'], 'Написать в Telegram')
-        self.assertIn('Три проекта: два демо-сайта и концепт', layout['text']['facts'])
+        self.assertEqual(layout['text']['cta'], 'Обсудить проект в Telegram')
+        self.assertIn('От идеи и структуры', layout['text']['facts'])
+        self.assertIn('Напрямую со мной', layout['text']['facts'])
+        self.assertEqual(layout['copy']['left'], 4.8)
+        self.assertEqual(layout['copy']['width'], 42)
+        self.assertEqual(layout['extra'][0]['src'], 'assets/hero/extra-1-sm.webp')
 
     def test_case_catalog_selects_each_project(self):
         catalog = HTML.split('<section class="case-index"', 1)[1].split('</section>', 1)[0]
@@ -120,7 +127,16 @@ class PortfolioChecks(unittest.TestCase):
         self.assertEqual(len(telegram), 3)  # header + hero + contact
         menu = HTML.split('<details class="mobile-menu">', 1)[1].split('</details>', 1)[0]
         self.assertEqual(re.findall(r'<a href="([^"]+)"', menu), ['#work', '#services', '#process', '#about', '#faq', '#contact'])
-        self.assertEqual(HTML.count('<details class="faq-item">'), 6)
+        self.assertEqual(HTML.count('<details class="faq-item">'), 7)
+        self.assertEqual(HTML.count('<li class="step">'), 6)
+        self.assertIn('id="process"', HTML)
+        self.assertIn('id="faq"', HTML)
+        self.assertIn('rel="canonical" href="https://yuriimasl.github.io/portfolio-v2/"', HTML)
+        self.assertIn('redesign.css?v=20261120d3', HTML)
+        self.assertIn('portfolio-motion.js?v=20261120d3', HTML)
+        self.assertNotIn('.reveal', HTML)
+        self.assertNotIn('.reveal', REDESIGN)
+        self.assertNotIn('.reveal', MOTION)
         self.assertIn('<dt>Сайт под ключ</dt>', HTML)
         self.assertIn('<dt>Каталог товаров и услуг</dt>', HTML)
         self.assertIn('<dt>Редизайн сайта</dt>', HTML)
@@ -130,13 +146,18 @@ class PortfolioChecks(unittest.TestCase):
         self.assertIn('https://yuriimasl.github.io/lyublyu-demo/', HTML)
 
     def test_motion_fallback_and_native_scrolling(self):
-        self.assertIn('prefers-reduced-motion: reduce', JS)
+        self.assertIn('prefers-reduced-motion: reduce', MOTION)
+        self.assertIn('ScrollTrigger.batch', MOTION)
+        self.assertIn('gsap.matchMedia', MOTION)
+        self.assertIn("event.key === 'Escape'", MOTION)
         self.assertIn("range.addEventListener('input', paint)", JS)
-        self.assertNotIn('Lenis', JS)
-        self.assertNotIn('preventDefault', JS)
-        self.assertNotIn('repeat: -1', JS)
+        self.assertNotIn('Lenis', JS + MOTION)
+        self.assertNotIn('preventDefault', JS + MOTION)
+        self.assertNotIn('repeat: -1', JS + MOTION)
+        self.assertNotIn('gsap.utils.toArray', JS)
         self.assertIn('@media (max-width: 560px)', CSS)
         self.assertIn('min-height: 44px', CSS)
+        self.assertIn('@media (prefers-reduced-motion: reduce)', REDESIGN)
         self.assertNotRegex(CSS, r'\.hero-copy\s*\{[^}]*opacity:\s*0')
 
     def test_smena_case_is_presented(self):
@@ -207,6 +228,19 @@ class PortfolioChecks(unittest.TestCase):
         ):
             with Image.open(case / 'screenshots' / name) as image:
                 self.assertEqual(image.size, size)
+
+    def test_discovery_files_and_noindex(self):
+        sitemap = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+        for loc in (
+            'https://yuriimasl.github.io/portfolio-v2/',
+            'https://yuriimasl.github.io/portfolio-v2/cases/smena/',
+            'https://yuriimasl.github.io/portfolio-v2/cases/luma/',
+        ):
+            self.assertIn(f'<loc>{loc}</loc>', sitemap)
+        robots = (ROOT / 'robots.txt').read_text(encoding='utf-8')
+        self.assertIn('Sitemap: https://yuriimasl.github.io/portfolio-v2/sitemap.xml', robots)
+        self.assertIn('Disallow: /editor.html', robots)
+        self.assertIn('noindex', (ROOT / 'editor.html').read_text(encoding='utf-8'))
 
     @unittest.skipUnless(BASE_URL, 'Pass the live preview URL to check HTTP resources')
     def test_http_all_resources(self):

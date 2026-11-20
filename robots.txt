@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /editor.html
+Disallow: /tools/
+Disallow: /_legacy/
+
+Sitemap: https://yuriimasl.github.io/portfolio-v2/sitemap.xml

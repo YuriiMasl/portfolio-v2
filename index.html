@@ -4,23 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Юрий — сайты и витрины для малого бизнеса</title>
-<meta name="description" content="Юрий — дизайн и разработка сайтов для малого бизнеса. Витрины, сайты услуг и интерфейсы: посмотрите авторские проекты и обсудите свою задачу.">
+<meta name="description" content="Юрий, дизайнер и разработчик сайтов из Воронежа. Сайты-витрины, каталоги и редизайн для малого бизнеса. Три демонстрационных проекта: цветочный салон, кофейня и концепт LUMA.">
+<meta name="author" content="Юрий">
 <meta name="theme-color" content="#0B0A09">
+<link rel="canonical" href="https://yuriimasl.github.io/portfolio-v2/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Юрий — сайты для бизнеса">
 <meta property="og:title" content="Юрий — сайты и витрины для малого бизнеса">
-<meta property="og:description" content="Авторские проекты Юрия: сайты для бизнеса и интерфейс цифрового продукта. Обсудите задачу и формат будущего сайта.">
+<meta property="og:description" content="Выберите один из трёх демонстрационных проектов и напишите Юрию, чтобы обсудить сайт для вашего дела.">
+<meta property="og:url" content="https://yuriimasl.github.io/portfolio-v2/">
+<meta property="og:image" content="https://yuriimasl.github.io/portfolio-v2/assets/hero/workshop.webp">
+<meta property="og:image:width" content="1586">
+<meta property="og:image:height" content="992">
+<meta property="og:image:alt" content="Стеклодувная мастерская: металлическая стойка с экраном демо-сайта">
 <meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Юрий — сайты и витрины для малого бизнеса">
+<meta name="twitter:description" content="Три демонстрационных проекта и прямой разговор о сайте для вашего дела.">
+<meta name="twitter:image" content="https://yuriimasl.github.io/portfolio-v2/assets/hero/workshop.webp">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/oswald-cyrillic-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/oswald-cyrillic-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/golos-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/golos-cyrillic-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/hero/workshop.webp" as="image">
-<link rel="stylesheet" href="workshop.css?v=20261120c3">
-<link rel="stylesheet" href="hero.css?v=20261120c4">
-<link rel="stylesheet" href="redesign.css?v=20261120c1">
+<link rel="preload" href="assets/hero/screen-main.webp" as="image">
+<link rel="stylesheet" href="workshop.css?v=20261120d3">
+<link rel="stylesheet" href="hero.css?v=20261120d3">
+<link rel="stylesheet" href="redesign.css?v=20261120d3">
 
 <noscript><style>.hero-stage{opacity:1}</style></noscript>
 </head>
@@ -33,11 +47,10 @@
 <header class="head">
   <div class="wrap head-wrap">
     <div class="head-bar glass">
-      <a class="brand" href="#top">
-        <span class="brand-avatar"><img src="assets/avatar.webp" width="320" height="320" alt="Юрий"></span>
+      <a class="brand" href="#top" aria-label="Юрий — на главную">
+        <span class="brand-avatar"><img src="assets/avatar.webp" width="320" height="320" alt=""></span>
         <span class="brand-text">
           <span class="brand-name">Юрий</span>
-          <span class="brand-note">сайты для бизнеса</span>
         </span>
       </a>
       <nav class="tabs" aria-label="Основная навигация">
@@ -65,13 +78,7 @@
 <main id="main">
 
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <img class="hero-ambient" src="assets/hero/workshop.webp" alt="" aria-hidden="true">
-    <div class="hero-stage">
-    <div class="hero-plate" aria-hidden="true">
-      <img class="hero-bg" src="assets/hero/workshop.webp" width="1586" height="992" alt="" fetchpriority="high">
-      <div class="hero-veil"></div>
-    </div>
-
+    <img class="hero-ambient" src="assets/hero/workshop.webp" width="1586" height="992" alt="" aria-hidden="true">
     <div class="hero-copy" data-layer="copy">
       <p class="hero-intro" data-text="intro">Дизайн и разработка сайтов для услуг, товаров и небольших компаний.</p>
       <h1 id="hero-title" data-text="title">
@@ -85,6 +92,12 @@
       <p class="hero-facts" data-text="facts">От идеи и структуры до адаптивной сборки и запуска<br>Напрямую со мной — без посредников</p>
     </div>
 
+    <div class="hero-stage">
+    <div class="hero-plate" aria-hidden="true">
+      <img class="hero-bg" src="assets/hero/workshop.webp" width="1586" height="992" alt="" fetchpriority="high">
+      <div class="hero-veil"></div>
+    </div>
+
     <div class="hero-exhibit" data-layer="exhibit" role="group" aria-label="Экран демо-макета на металлической стойке">
       <img class="exhibit-stand" data-layer="stand" src="assets/hero/stand.webp" width="990" height="992" alt="" aria-hidden="true">
       <figure class="exhibit-panel exhibit-panel--main" data-layer="main">
@@ -94,8 +107,6 @@
           <figcaption>Главная · первый экран</figcaption>
         </div>
       </figure>
-      
-      
     </div>
     </div>
   </section>
@@ -172,8 +183,8 @@
   <section class="case" id="case-flowers" aria-labelledby="work-title">
     <div class="wrap">
       <div class="case-head">
-        <h2 id="work-title" class="fade">Цветочный салон:<br>букет за две минуты</h2>
-        <p class="lead fade">«Люблю, целую» придуман, я сделал его как образец. Задача была простая: человек заходит с телефона и сразу понимает, какой букет взять и сколько это стоит. Слева страница, которая была, справа моя.</p>
+        <h2 id="work-title">Цветочный салон:<br>букет за две минуты</h2>
+        <p class="lead">«Люблю, целую» придуман, я сделал его как образец. Задача была простая: человек заходит с телефона и сразу понимает, какой букет взять и сколько это стоит. Слева страница, которая была, справа моя.</p>
       </div>
 
       <div class="compare glass-frame" style="--split: 52%">
@@ -189,7 +200,7 @@
       </div>
 
       <div class="case-body">
-        <div class="case-what fade">
+        <div class="case-what">
           <h3>Что именно сделано</h3>
           <ul class="ticks">
             <li>Собрал выбор: повод, размер, бюджет. Вместо простыни текста.</li>
@@ -199,20 +210,26 @@
           <a class="btn btn--glass btn--glass-primary" href="https://yuriimasl.github.io/lyublyu-demo/" target="_blank" rel="noopener">Открыть демо-макет<span class="arr" aria-hidden="true">↗</span></a>
           <p class="note">Цифр и отзывов у макета нет.</p>
         </div>
-        <div class="case-truth fade">
+        <div class="case-truth">
           <h3>Что здесь честно</h3>
           <p>Салон выдуман, заказы ненастоящие. Всё на странице придумано для примера.</p>
           <p>Второй макет ниже, кофейня: там меню с фильтрами и часы работы.</p>
         </div>
       </div>
+
+      <a class="case-next" href="#smena">
+        <span>Следующий проект</span>
+        <strong>Кофейня «Смена»</strong>
+        <span class="case-next__arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
   <section class="case case--smena" id="smena" aria-labelledby="smena-title">
     <div class="wrap">
       <div class="case-head">
-        <h2 id="smena-title" class="fade">Кофейня и обжарка:<br>меню и фильтры</h2>
-        <p class="lead fade">«Смена» придумана: кофейня в бывшем цехе на Кирова, 4. Второй образец. Внутри меню с фильтрами, часы работы и номер смены.</p>
+        <h2 id="smena-title">Кофейня и обжарка:<br>меню и фильтры</h2>
+        <p class="lead">«Смена» придумана: кофейня в бывшем цехе на Кирова, 4. Второй образец. Внутри меню с фильтрами, часы работы и номер смены.</p>
       </div>
 
       <div class="case-board glass-frame">
@@ -226,7 +243,7 @@
       <p class="case-board__caption"><span>Главная · первый экран</span><span>мобайл 390 / десктоп 1440</span></p>
 
       <div class="case-body">
-        <div class="case-what fade">
+        <div class="case-what">
           <h3>Что именно сделано</h3>
           <ul class="ticks">
             <li>Меню с фильтрами «кофе / не кофе / еда», счётчик позиций и ровные цены.</li>
@@ -236,20 +253,26 @@
           <a class="btn btn--glass btn--glass-primary" href="cases/smena/" target="_blank" rel="noopener">Открыть демо-макет<span class="arr" aria-hidden="true">↗</span></a>
           <p class="note">Название, меню и события придуманы.</p>
         </div>
-        <div class="case-truth fade">
+        <div class="case-truth">
           <h3>Что здесь честно</h3>
           <p>Отзывов, логотипов клиентов и цифр здесь нет: их пока не существует.</p>
           <p>Чужие работы своим именем не подписываю, поэтому в портфолио только мои макеты.</p>
         </div>
       </div>
+
+      <a class="case-next" href="#luma">
+        <span>Следующий проект</span>
+        <strong>LUMA — запись для студии</strong>
+        <span class="case-next__arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
   <section class="case case--luma" id="luma" aria-labelledby="luma-title">
     <div class="wrap">
       <div class="case-head">
-        <h2 id="luma-title" class="fade">Запись для клиента.<br>Порядок для владельца.</h2>
-        <p class="lead fade">LUMA — демонстрационный цифровой продукт для небольших студий и сервисных команд. Клиент сам выбирает услугу и время, владелец ведёт расписание, команду и базу в одном месте.</p>
+        <h2 id="luma-title">Запись для клиента.<br>Порядок для владельца.</h2>
+        <p class="lead">LUMA — демонстрационный цифровой продукт для небольших студий и сервисных команд. Клиент сам выбирает услугу и время, владелец ведёт расписание, команду и базу в одном месте.</p>
       </div>
 
       <figure class="luma-board glass-frame">
@@ -258,7 +281,7 @@
       </figure>
 
       <div class="case-body">
-        <div class="case-what fade">
+        <div class="case-what">
           <h3>Что можно попробовать</h3>
           <ul class="ticks">
             <li>Пошаговую запись: услуга, специалист, дата, время и контакты.</li>
@@ -268,41 +291,69 @@
           <a class="btn btn--glass btn--glass-primary" href="cases/luma/" target="_blank" rel="noopener">Открыть интерактивный кейс<span class="arr" aria-hidden="true">↗</span></a>
           <p class="note">Концепт продукта · все данные демонстрационные.</p>
         </div>
-        <div class="case-truth fade">
+        <div class="case-truth">
           <h3>Что здесь честно</h3>
           <p>LUMA — самостоятельный концепт, не внедрение для клиента. Имена, записи и суммы придуманы, реальные уведомления не отправляются.</p>
           <p>Я делаю сайты и интерфейсы для малого бизнеса. Если у вас свой процесс записи или продаж, его можно спроектировать под вашу задачу.</p>
         </div>
       </div>
+
+      <a class="case-next case-next--contact" href="#contact">
+        <span>Дальше</span>
+        <strong>Обсудить похожий проект</strong>
+        <span class="case-next__arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
   <section class="process" id="process" aria-labelledby="process-title">
-    <div class="wrap">
+    <div class="wrap process-grid">
       <div class="process-head">
-        <h2 id="process-title" class="fade">Как я работаю</h2>
-        <p class="lead fade">Одинаково на любом проекте: сначала разговор, потом структура, потом сборка, потом проверка.</p>
+        <h2 id="process-title">Как я работаю</h2>
+        <p class="lead">От первого разговора до передачи сайта — шесть понятных шагов. На каждом этапе вы знаете, что происходит и что нужно от вас.</p>
       </div>
       <ol class="steps">
-        <li class="step fade">
+        <li class="step">
           <span class="step-num" aria-hidden="true">01</span>
-          <h3>Разговор</h3>
-          <p>Кто ваш покупатель, что он должен понять за первые секунды и что сделать. Пока не ясно, к вёрстке не приступаю.</p>
+          <div class="step-copy">
+            <h3>Обсуждение</h3>
+            <p>Кто ваш покупатель, что он должен понять за первые секунды и что сделать. Пока задача не ясна, к вёрстке не приступаю.</p>
+          </div>
         </li>
-        <li class="step fade">
+        <li class="step">
           <span class="step-num" aria-hidden="true">02</span>
-          <h3>Структура</h3>
-          <p>Решаем, что на странице главное: где цена, где доказательство, где кнопка. Согласуем до того, как появится код.</p>
+          <div class="step-copy">
+            <h3>Структура и концепция</h3>
+            <p>Решаем, что на странице главное: где цена, где доказательство, где кнопка. Согласуем до того, как появится код.</p>
+          </div>
         </li>
-        <li class="step fade">
+        <li class="step">
           <span class="step-num" aria-hidden="true">03</span>
-          <h3>Вёрстка</h3>
-          <p>Текст, шрифты, отступы и мобильная версия. Оставляю только то, что нужно сайту для работы.</p>
+          <div class="step-copy">
+            <h3>Дизайн</h3>
+            <p>Визуальный язык, типографика, сетка и состояния. Согласуем макет на телефоне и компьютере.</p>
+          </div>
         </li>
-        <li class="step fade">
+        <li class="step">
           <span class="step-num" aria-hidden="true">04</span>
-          <h3>Проверка</h3>
-          <p>Перед запуском проверяю сайт на телефоне и компьютере. Что понадобится после, обсудим отдельно.</p>
+          <div class="step-copy">
+            <h3>Разработка</h3>
+            <p>Собираю сайт вручную: HTML, CSS и немного JavaScript. Без тяжёлых конструкторов и лишних зависимостей.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">05</span>
+          <div class="step-copy">
+            <h3>Адаптация и проверка</h3>
+            <p>Проверяю на телефоне, планшете и компьютере, с клавиатуры и без JavaScript. Исправляю то, что мешает читать или заказывать.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">06</span>
+          <div class="step-copy">
+            <h3>Публикация и передача</h3>
+            <p>Настраиваю домен и хостинг, публикую сайт, передаю доступы и короткую инструкцию. Сайт остаётся вашим.</p>
+          </div>
         </li>
       </ol>
     </div>
@@ -310,35 +361,45 @@
 
   <section class="services" id="services" aria-labelledby="services-title">
     <div class="wrap">
-      <h2 id="services-title" class="fade">Что можно заказать</h2>
+      <h2 id="services-title">Что можно заказать</h2>
       <dl class="service-list">
-        <div class="service fade">
+        <div class="service">
           <dt>Сайт под ключ</dt>
-          <dd>Структура, дизайн и разработка сайта для услуг, студии или локального бизнеса.</dd>
+          <dd>
+            <p>Для тех, кому нужен сайт целиком: от структуры и дизайна до публикации. Разберём задачу и покупателя, соберу страницы, проверю на телефоне и передам готовый сайт.</p>
+            <p class="service-task">Задача: чтобы человек понял, что вы предлагаете, и написал вам.</p>
+          </dd>
         </div>
-        <div class="service fade">
+        <div class="service">
           <dt>Каталог товаров и услуг</dt>
-          <dd>Витрина с категориями, карточками и понятным путём к заказу.</dd>
+          <dd>
+            <p>Витрина, в которой человек быстро находит нужное: категории, карточки, цены и понятный путь к заказу. Подойдёт магазину, салону или студии с несколькими услугами.</p>
+            <p class="service-task">Задача: сократить путь от «интересно» до заявки.</p>
+          </dd>
         </div>
-        <div class="service fade">
+        <div class="service">
           <dt>Редизайн сайта</dt>
-          <dd>Обновлю структуру, визуальный стиль и мобильную версию существующего сайта.</dd>
+          <dd>
+            <p>Если сайт уже есть, но с него не пишут: разберу структуру, обновлю визуальный язык и мобильную версию. Сохраню то, что работает, и уберу лишнее.</p>
+            <p class="service-task">Задача: вернуть доверие и сделать следующий шаг очевидным.</p>
+          </dd>
         </div>
       </dl>
+      <p class="service-note">Стоимость зависит от объёма и задач. Обсудим её после короткого разговора — <a href="#contact">напишите</a>.</p>
     </div>
   </section>
 
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
-      <h2 id="faq-title" class="fade">Частые вопросы</h2>
+      <h2 id="faq-title">Частые вопросы</h2>
       <div class="faq-list">
         <details class="faq-item">
           <summary>Сколько стоит сайт?</summary>
-          <p class="faq-answer">Стоимость зависит от объёма, структуры и нужных функций. Напишите, что хотите показать и как клиенты оформляют заказ, — после обсуждения определим состав работ и цену до старта.</p>
+          <p class="faq-answer">Стоимость зависит от объёма: сколько страниц, нужен ли каталог, кто готовит тексты и фотографии. После короткого разговора я называю ориентир и состав работ; итоговую сумму фиксируем до старта.</p>
         </details>
         <details class="faq-item">
           <summary>Сколько времени занимает разработка?</summary>
-          <p class="faq-answer">Срок зависит от объёма сайта и готовности материалов. Обсудим его после того, как определим структуру и список страниц.</p>
+          <p class="faq-answer">Срок зависит от объёма сайта и готовности материалов. Точный срок ставлю после того, как определим структуру и список страниц.</p>
         </details>
         <details class="faq-item">
           <summary>Кто готовит тексты и изображения?</summary>
@@ -349,27 +410,32 @@
           <p class="faq-answer">На старте обсудим адрес сайта и размещение. Подскажу, что потребуется для запуска, а кто оформляет домен и хостинг — договоримся заранее.</p>
         </details>
         <details class="faq-item">
+          <summary>Как вносятся правки?</summary>
+          <p class="faq-answer">Правки по согласованному объёму входят в работу: собираем их списком и показываю результат. После запуска небольшие изменения обсуждаем отдельно, чтобы не раздувать смету.</p>
+        </details>
+        <details class="faq-item">
           <summary>Смогу ли я менять сайт самостоятельно?</summary>
           <p class="faq-answer">Это зависит от выбранного способа разработки. До начала обсудим, какие материалы вы хотите менять сами, и выберем подходящий формат.</p>
         </details>
         <details class="faq-item">
           <summary>Что будет после публикации?</summary>
-          <p class="faq-answer">Перед запуском проверю сайт на телефоне и компьютере. Если после публикации понадобятся изменения, отдельно обсудим их объём.</p>
+          <p class="faq-answer">Перед запуском проверю сайт на телефоне и компьютере, передам доступы и короткую инструкцию. Если понадобится помощь, останусь на связи.</p>
         </details>
       </div>
+      <p class="faq-more">Не нашли свой вопрос? <a href="#contact">Напишите мне</a> — отвечу лично.</p>
     </div>
   </section>
 
   <section class="about" id="about" aria-labelledby="about-title">
     <div class="wrap about-grid">
-      <figure class="portrait glass-frame fade">
+      <figure class="portrait glass-frame">
         <img src="assets/portrait.webp" width="1000" height="1000" alt="Юрий, разработчик сайтов из Воронежа" loading="lazy" decoding="async">
         <figcaption>Юрий · Воронеж</figcaption>
       </figure>
       <div class="about-copy">
-        <h2 id="about-title" class="fade">Меня зовут Юрий.<br>Делаю сам, от первой встречи до запуска.</h2>
-        <p class="fade">Без агентства и менеджеров: вы говорите со мной, я же и собираю страницу. Беру небольшие дела, где сайт нужен, чтобы человек выбрал и написал.</p>
-        <p class="fade">В портфолио три демо-кейса: цветочный салон, кофейня и цифровой продукт LUMA. Чужие работы своим именем не подписываю. Следующим может стать ваш сайт.</p>
+        <h2 id="about-title">Меня зовут Юрий.<br>Делаю сам, от первой встречи до запуска.</h2>
+        <p>Без агентства и менеджеров: вы говорите со мной, я же и собираю страницу. Беру небольшие дела, где сайт нужен, чтобы человек выбрал и написал.</p>
+        <p>В портфолио три демо-кейса: цветочный салон, кофейня и цифровой продукт LUMA. Чужие работы своим именем не подписываю. Следующим может стать ваш сайт.</p>
       </div>
     </div>
   </section>
@@ -377,16 +443,16 @@
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <img class="contact-bg" src="assets/molten-texture.webp" width="1200" height="800" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="wrap">
-      <h2 id="contact-title" class="fade">Давайте сделаем сайт для вашего дела</h2>
-      <p class="lead fade">Расскажите о бизнесе и задаче. Я предложу подходящий формат сайта, обозначу этапы и сориентирую по стоимости до начала работы.</p>
-      <div class="contact-actions fade">
+      <h2 id="contact-title">Давайте сделаем сайт для вашего дела</h2>
+      <p class="lead">Расскажите о бизнесе и задаче. Я предложу подходящий формат сайта, обозначу этапы и сориентирую по стоимости до начала работы.</p>
+      <div class="contact-actions">
         <a class="btn btn--glass btn--glass-primary btn--big" href="https://t.me/IOpaWho" target="_blank" rel="noopener">Написать в Telegram<span class="arr" aria-hidden="true">↗</span></a>
         <a class="btn btn--glass" href="https://vk.ru/see_the_root" target="_blank" rel="noopener">ВКонтакте</a>
         <a class="phone" href="tel:+79292322074">+7 929 232-20-74</a>
       </div>
-      <p class="note fade">Если сайт уже есть, пришлите ссылку: посмотрю, что мешает людям вам писать.</p>
+      <p class="note">Можно без технического задания: расскажите, чем занимаетесь и что хотите изменить. Если сайт уже есть, пришлите ссылку.</p>
     </div>
-    <img class="bloom-echo" src="assets/glass-alstroemeria-bright.webp" width="880" height="803" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img class="bloom-echo" src="assets/glass-alstroemeria-bright-sm.webp" width="480" height="439" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </section>
 
 </main>
@@ -406,13 +472,16 @@
   </div>
 </footer>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Юрий","url":"https://yuriimasl.github.io/portfolio-v2/","jobTitle":"Дизайнер и разработчик сайтов","address":{"@type":"PostalAddress","addressLocality":"Воронеж","addressCountry":"RU"},"sameAs":["https://t.me/IOpaWho","https://vk.ru/see_the_root"]}
+</script>
 
 <script src="vendor/gsap.min.js?v=3.13.0" defer></script>
 <script src="vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
-<script src="workshop.js?v=20261119c1" defer></script>
-<script src="hero-layout.js?v=20261119c1" defer></script>
-<script src="hero-cta.js?v=20261119a" defer></script>
-<script src="portfolio-motion.js?v=20261120b2" defer></script>
+<script src="workshop.js?v=20261120d3" defer></script>
+<script src="hero-layout.js?v=20261120d3" defer></script>
+<script src="hero-cta.js?v=20261120d3" defer></script>
+<script src="portfolio-motion.js?v=20261120d3" defer></script>
 
 </body>
 </html>

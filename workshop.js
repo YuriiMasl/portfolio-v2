@@ -30,16 +30,4 @@
       if (menu) menu.open = false;
     });
   });
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!window.gsap || !window.ScrollTrigger) return;
-  var gsap = window.gsap;
-  gsap.registerPlugin(window.ScrollTrigger);
-  // Hero text and mounted glass are immediately readable, without a fade.
-  gsap.utils.toArray('.fade').forEach(function (element) {
-    gsap.from(element, {
-      y: 18, opacity: 0, duration: .6, ease: 'power2.out', clearProps: 'all',
-      scrollTrigger: { trigger: element, start: 'top 95%', once: true }
-    });
-  });
 }());
