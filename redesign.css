@@ -342,3 +342,49 @@ h2 {
   .case-head h2 { max-width: 12ch; }
   .services::after { display: none; }
 }
+
+
+/* Warm glass finish — keep the workshop's heat, not a cold tech/neon palette. */
+:root {
+  --ink: #0b0a09; --ink-soft: #100d0b; --iron: #16120e;
+  --bone: #f2ece3; --bone-dim: #cabfb2; --muted: #9c9184;
+  --glass-edge: #dedbd5; --glass-light: #f2ece3; --glass-highlight: #fffdf8;
+  --line: rgba(242,236,227,.13); --line-glass: rgba(242,236,227,.28);
+  --accent-glass: #e6d3bd; --accent-ink: #20170f;
+}
+body {
+  background: radial-gradient(ellipse at 74% 7%,rgba(180,111,55,.10),transparent 36rem),
+    linear-gradient(180deg,#0b0a09 0%,#15100c 48%,#0b0a09 100%);
+}
+::selection { background: #e6d3bd; color: #17100b; }
+.lead { color: #cabfb2; }
+.hero-intro { color: #e0d4c5; }
+.hero-facts { color: #b7a99a; border-left-color: rgba(230,211,189,.62); }
+.hero-secondary { color: #f2ece3; }
+.case-index__head p,.case-shelf__description { color: #c4b8aa; }
+.case-shelf__type { color: #d2b99c; }
+.case-shelf__stage { background: rgba(11,9,7,.86); border-color: rgba(242,236,227,.4); color: #f2ece3; }
+.case-shelf__item { border-color: rgba(242,236,227,.2); background: linear-gradient(145deg,rgba(242,236,227,.08),rgba(242,236,227,.015) 55%),#15100c; }
+.case-shelf__item:hover { border-color: rgba(242,236,227,.65); background-color: #1d1711; }
+.case-shelf__link { color: #f2ece3; border-color: rgba(242,236,227,.4); }
+.case-shelf__item:hover .case-shelf__link { border-color: #fffdf8; }
+.case-shelf__item.is-active {
+  border-color: rgba(242,236,227,.76);
+  background: linear-gradient(145deg,rgba(230,211,189,.14),rgba(242,236,227,.025) 58%),#17110c;
+  box-shadow: 0 22px 60px rgba(0,0,0,.24),inset 0 1px rgba(255,253,248,.22);
+}
+.case-shelf__item.is-active .case-shelf__image { border-color: rgba(242,236,227,.72); }
+.case-shelf__item.is-active .case-shelf__link::after {
+  content: " · СЕЙЧАС СМОТРИТЕ"; color: #d2b99c; font-size: 9px; letter-spacing: .08em;
+}
+.case--smena .case-head h2 { color: #ead8c7; }
+.case--luma .case-head h2 { color: #e0d8cb; }
+.case-shelf__item::after { background: radial-gradient(360px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(242,226,205,.13),transparent 68%); }
+.faq-item summary::after { color: #d2b99c; }
+.contact { background: linear-gradient(115deg,rgba(16,12,9,.97),rgba(35,23,15,.88)); }
+.contact .btn--big { box-shadow: 0 12px 35px rgba(230,211,189,.12); }
+.contact .btn--big:hover { box-shadow: 0 16px 44px rgba(230,211,189,.22); }
+.foot { background: #080706; }
+.foot-brand { color: #f2ece3; }
+.foot-nav a,.foot-note { color: #a99b8c; }
+@media (prefers-reduced-motion: reduce) { .case-shelf__item.is-active { box-shadow: none; } }
