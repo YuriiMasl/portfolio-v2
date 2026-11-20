@@ -283,3 +283,62 @@ h2 {
   html { scroll-behavior: auto; }
   .case-shelf__item,.case-shelf__image img,.glass-cta { transition: none !important; }
 }
+
+
+/* Motion and art-direction polish */
+:root { --accent-glass: #c4e5dc; --accent-ink: #10201f; }
+.case-index { isolation: isolate; }
+.case-index::before {
+  content: ""; position: absolute; z-index: -1; inset: 12% -10% auto;
+  height: 65%; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%,rgba(130,184,173,.12),transparent 68%);
+}
+.case-shelf__item {
+  position: relative; overflow: hidden;
+  box-shadow: 0 20px 55px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.09);
+}
+.case-shelf__item::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(360px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(208,244,232,.15),transparent 68%);
+  transition: opacity .3s ease;
+}
+.case-shelf__item:hover::after { opacity: 1; }
+.case-shelf__image { border-radius: 2px; }
+.case-shelf__image img { will-change: transform; }
+.case-shelf__details { position: relative; z-index: 1; }
+.case-shelf__title { letter-spacing: -.025em; }
+.case-shelf__link { width: fit-content; border-bottom: 1px solid rgba(213,238,229,.35); padding-bottom: 5px; }
+.case-shelf__item:hover .case-shelf__link { border-color: #d9eee5; }
+.case-head h2 { max-width: 11ch; }
+.case--smena .case-head h2 { color: #e9d9e1; }
+.case--luma .case-head h2 { color: #d2e5db; }
+.case-what .btn { margin-top: 15px; }
+.services { position: relative; overflow: hidden; }
+.services::after {
+  content: "FORM / FUNCTION"; position: absolute; right: -2vw; bottom: -3vw;
+  color: rgba(18,26,27,.045); font: 600 clamp(70px,14vw,220px)/.8 "Oswald",sans-serif;
+  white-space: nowrap; pointer-events: none;
+}
+.service { position: relative; z-index: 1; }
+.service dt { letter-spacing: -.025em; }
+.faq-item summary { cursor: pointer; list-style: none; position: relative; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  font: 300 28px/1 "Golos Text"; color: #b5d3c9; transition: transform .25s ease;
+}
+.faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.contact .btn--big { box-shadow: 0 12px 35px rgba(194,230,216,.14); }
+.contact .btn--big:hover { box-shadow: 0 16px 44px rgba(194,230,216,.25); }
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .72s cubic-bezier(.2,.7,.2,1), transform .72s cubic-bezier(.2,.7,.2,1); transition-delay: var(--reveal-delay,0ms); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .case-shelf__item::after { display: none; }
+}
+@media (max-width: 640px) {
+  .case-shelf__item { box-shadow: none; }
+  .case-index { padding-top: 64px; }
+  .case-head h2 { max-width: 12ch; }
+  .services::after { display: none; }
+}
