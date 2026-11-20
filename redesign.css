@@ -388,3 +388,75 @@ body {
 .foot-brand { color: #f2ece3; }
 .foot-nav a,.foot-note { color: #a99b8c; }
 @media (prefers-reduced-motion: reduce) { .case-shelf__item.is-active { box-shadow: none; } }
+
+
+/* Final hero composition: compact navigation stays clear of the glass exhibit. */
+@media (min-width: 881px) {
+  .head {
+    position: absolute;
+    inset: 14px auto auto 4.8%;
+    z-index: 20;
+    width: auto;
+    padding: 0;
+  }
+  .head-wrap {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+  .head-bar.glass {
+    display: inline-flex;
+    width: auto;
+    max-width: min(720px, 48vw);
+    min-height: 66px;
+    padding: 7px 10px 7px 8px;
+    gap: 12px;
+    border: 1px solid rgba(242,236,227,.32);
+    border-radius: 22px;
+    background: linear-gradient(135deg,rgba(28,24,20,.78),rgba(12,11,10,.64));
+    box-shadow: 0 12px 38px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.16);
+    backdrop-filter: blur(24px) saturate(125%);
+    -webkit-backdrop-filter: blur(24px) saturate(125%);
+  }
+  .brand { gap: 9px; padding: 2px 8px 2px 2px; }
+  .brand-avatar { width: 38px; height: 38px; border-radius: 11px; }
+  .brand-name { font-size: 16px; }
+  .brand-note { margin-top: 2px; font-size: 11px; }
+  .tabs { gap: 2px; }
+  .tab {
+    min-height: 40px;
+    padding: 9px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .tab--accent {
+    padding-inline: 13px;
+    border: 1px solid rgba(242,236,227,.34);
+    background: rgba(242,236,227,.10);
+    color: #f2ece3;
+  }
+  .tab--accent:hover { background: rgba(242,236,227,.2); color: #fffdf8; }
+  .hero-copy { width: 45%; max-width: 720px; }
+  .hero-copy h1 {
+    max-width: 100%;
+    font-size: clamp(54px,5.15vw,88px);
+    line-height: .91;
+    letter-spacing: -.045em;
+    margin-bottom: 24px;
+  }
+  .hero-intro { margin-bottom: 22px; }
+  .hero-facts { margin-top: 24px; }
+}
+@media (min-width: 881px) and (max-width: 1120px) {
+  .head { left: 3%; }
+  .head-bar.glass { max-width: 66vw; }
+  .tab { padding-inline: 8px; font-size: 12px; }
+  .hero-copy { width: 47%; }
+  .hero-copy h1 { font-size: clamp(52px,5.4vw,68px); }
+}
+@media (max-width: 880px) {
+  .head-bar.glass { border-radius: 20px; }
+}
